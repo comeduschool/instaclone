@@ -1,5 +1,5 @@
 // React modules
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
 // Styles
@@ -27,7 +27,7 @@ function App() {
         <Route path="/feeds/*" element={<Main/>} />
         <Route path="/feeds/:id" element={<FeedDetail />} />
         <Route path="/lab" element={<Laboratroy/>} />
-        <Route path="/*" element={<NotFound/>} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function main() {
+
+function Main() {
+  const nav = useNavigate();
+
+  useEffect(()=>{
+    if (localStorage.getItem("user") === null) {
+      nav('/signin', {replace: true})
+    }
+  })
+
   return (
-    <div>main</div>
+    <div>Main</div>
   );
 }
 
-export default main;
+export default Main;
