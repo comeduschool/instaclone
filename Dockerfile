@@ -15,4 +15,6 @@ COPY service ./service
 COPY web ./web
 RUN pip install -r ${SERVICE_DEPS}
 
+EXPOSE 3000
+
 ENTRYPOINT ["ash"]
