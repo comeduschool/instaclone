@@ -1,6 +1,7 @@
 // React modules
 import React, { useEffect } from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import axios from 'axios';
 
 // Styles
 import './App.css';
@@ -16,6 +17,11 @@ import FeedDetail from './pages/feed-detail/FeedDetail';
 import Laboratroy from './pages/laboratory/Laboratory';
 
 function App() {
+  axios.defaults.baseURL = 'http://localhost:9991';
+  axios.defaults.withCredentials = true
+  axios.defaults.xsrfCookieName = 'csrftoken';
+  axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+
   return (
     <BrowserRouter>
       <Routes>

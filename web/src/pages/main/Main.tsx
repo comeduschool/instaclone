@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 
 function Main() {
   const nav = useNavigate();
+  const [cookies] = useCookies();
 
   useEffect(()=>{
-    if (localStorage.getItem("user") === null) {
-      nav('/signin', {replace: true})
+    console.log(cookies.csrftoken);
+    if (!cookies.csrftoken) {
+      nav('/signin', {replace: true});
     }
   })
 

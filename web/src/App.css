@@ -9,7 +9,7 @@ p, span {
 
 .form {
   width: 350px;
-  height: 380px;
+  height: 390px;
   display: flex;
   margin: 75px, auto;
   flex-direction: column;
@@ -45,7 +45,7 @@ img.form-logo {
 .form-error {
   width: 270px;
   height: 40px;
-  margin: 3px auto;
+  margin: 13px auto;
   padding: 0 10px;
   display: block;
   color: red;
