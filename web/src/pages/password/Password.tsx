@@ -1,8 +1,16 @@
+// React modules
 import React from 'react';
 
+// Components
+import PassswordForm from '../../components/password-form/PasswordForm';
+
+// Styles
+import '../../App.css';
 function Password() {
   return (
-    <div>Password</div>
+    <div className="center">
+      <PassswordForm />
+    </div>
   );
 }
 

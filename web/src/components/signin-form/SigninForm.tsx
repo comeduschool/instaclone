@@ -9,10 +9,10 @@ import axios from 'axios';
 import logo from '../../logo.png';
 
 // Styles
-import "../../App.css";
+import '../../App.css';
 
 function SigninForm() {
-  const emailOpts:RegisterOptions = {
+  const emailOpts: RegisterOptions = {
     required: true,
     pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
   };
@@ -34,8 +34,8 @@ function SigninForm() {
     }
   });
 
-  const handleValid = (d: any) => {
-    axios.post("/users/signin", d, { withCredentials: true })
+  const handleValid = (data: any) => {
+    axios.post("/users/signin", data, { withCredentials: true })
       .then((resp)=>{
         nav('/', {replace: true});
       })
@@ -53,7 +53,7 @@ function SigninForm() {
       <img className="form-logo" src={logo} alt="logo.png"/>
       <input className="form-input" type="text" placeholder="이메일" {...register("email", emailOpts)}/>
       <input className="form-input" type="password" placeholder="비밀번호" {...register("password", passwordOpts)}/>
-      <button id="form-btn" type="submit" disabled={!isValid}>로그인</button>
+      <button className="form-btn form-btn-blue" type="submit" disabled={!isValid}>로그인</button>
       <Link className="link" to="/password"><span className="form-password">비밀번호를 잊으셨나요?</span></Link>
       { errorMsg !== "" && <div className="form-error">{errorMsg}</div>}
     </form>

@@ -41,7 +41,7 @@ function SignunForm() {
   
   // Handlers
   const handleValid = (d: any) => {
-    axios.post("http://localhost:9991/users/signup", d)
+    axios.post("/users/signup", d)
       .then((resp)=>{
         console.log(resp);
         console.log(cookies.user);
@@ -63,7 +63,7 @@ function SignunForm() {
       <input className="form-input" type="text" placeholder="이메일" {...register("email", emailOpts)}/>
       <input className="form-input" type="text" placeholder="사용자이름" {...register("username", usernameOpts)}/>
       <input className="form-input" type="password" placeholder="비밀번호" {...register("password", passwordOpts)}/>
-      <button id="form-btn" type="submit" disabled={!isValid}>가입</button>
+      <button className="form-btn form-btn-blue" type="submit" disabled={!isValid}>가입</button>
       { errorMsg !== "" && <div className="form-error">{errorMsg}</div> }
     </form>
   );

@@ -18,6 +18,19 @@ p, span {
   background-color: #fff;
   border: 1px solid #DBDBDB;
 }
+
+.password-form {
+  width: 350px;
+  height: 520px;
+  display: flex;
+  margin: 25px, auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  background-color: #fff;
+  border: 1px solid #DBDBDB;
+}
+
 img.form-logo {
   align-self: center;
   width: 175px;
@@ -42,6 +55,28 @@ img.form-logo {
   border: 1px solid #8a8a8a;
   outline: none;
 }
+
+.form-content-title {
+  width: 270px;
+  height: 40px;
+  margin: 30px 3px 3px auto;
+  padding: 0 10px;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form-content-subtitle {
+  width: 270px;
+  height: 40px;
+  margin: 13px auto;
+  padding: 0 10px;
+  display: block;
+  font-size: 14px;
+  color: #8e8e8e;    
+}
+
 .form-error {
   width: 270px;
   height: 40px;
@@ -52,27 +87,47 @@ img.form-logo {
   font-size: 14px;
 }
 
-#form-btn {
+.form-btn {
   width: 268px;
   height: 30px;
   margin: 13px auto;
+  border: solid 1px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-btn-bottom {
+  margin-top: auto; 
+}
+
+.form-btn-blue {
   background-color: #0095f6;
   border: none;
   border-radius: 3px;
   color: white;
-  font-size: 14px;
-  font-weight: 600;
 }
-#form-btn:disabled {
+
+.form-btn-red {
+  background-color: #f62900;
+  border: none;
+  border-radius: 3px;
+  color: white;
+}
+
+.form-btn:disabled {
   background-color: #B9DFFC;
 }
-#form-btn:disabled:hover {
+
+.form-btn:disabled:hover {
   cursor: default;
 }
-#form-btn:enabled:hover {
+
+.form-btn:enabled:hover {
   cursor: pointer;
 }
-#form-btn:focus {
+
+.form-btn:focus {
   outline: none;
 }
 
@@ -81,12 +136,18 @@ img.form-logo {
   text-align: center;
 }
 
+.link-noline {
+  text-decoration: none;
+}
+
 .form-password {
   color : #00366B;
   align-self: center;
   font-size: 12px;
   margin-top: 70px;
 }
+
+
 
 .form-password:hover {
   cursor: pointer;
