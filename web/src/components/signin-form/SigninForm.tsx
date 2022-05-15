@@ -1,15 +1,15 @@
 // React modules
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useForm, RegisterOptions } from "react-hook-form";
+import { useForm, RegisterOptions } from 'react-hook-form';
 import { useCookies } from 'react-cookie';
 import axios from 'axios';
 
-// Logo
-import logo from '../../logo.png';
-
 // Styles
 import '../../App.css';
+
+// Logo
+import logo from '../../logo.png';
 
 function SigninForm() {
   const emailOpts: RegisterOptions = {
@@ -28,15 +28,15 @@ function SigninForm() {
   const [cookies] = useCookies();
   
   useEffect(()=>{
-    console.log(cookies.csrftoken);
     if (cookies.csrftoken) {
-      nav('/')
+      nav('/');
     }
   });
 
   const handleValid = (data: any) => {
-    axios.post("/users/signin", data, { withCredentials: true })
+    axios.post("/users/signin", data)
       .then((resp)=>{
+        localStorage.setItem("userId", resp.data.pk);
         nav('/', {replace: true});
       })
       .catch((error)=>{

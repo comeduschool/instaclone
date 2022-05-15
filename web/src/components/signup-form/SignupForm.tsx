@@ -35,7 +35,7 @@ function SignunForm() {
 
   useEffect(()=>{
     if (cookies.csrftoken) {
-      nav('/')
+      nav('/');
     }
   });
   
@@ -44,7 +44,7 @@ function SignunForm() {
     axios.post("/users/signup", d)
       .then((resp)=>{
         console.log(resp);
-        console.log(cookies.user);
+        localStorage.setItem("userId", resp.data.pk);
         nav('/', {replace: true});
       })
       .catch((error)=>{

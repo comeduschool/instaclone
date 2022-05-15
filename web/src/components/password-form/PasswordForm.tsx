@@ -34,7 +34,7 @@ let PassswordForm = ()=>{
     useEffect(()=>{
       console.log(cookies.csrftoken);
       if (cookies.csrftoken) {
-        nav('/')
+        nav('/');
       }
     })
 
@@ -117,7 +117,7 @@ let PassswordForm = ()=>{
           reset({...data}, {keepDirty: false});
           axios.put("/users/password", data)
             .then((resp)=>{
-              nav("/signin", {replace: true})
+              nav("/signin", {replace: true});
             })
             .catch((error)=>{
               console.log(error);

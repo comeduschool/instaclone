@@ -31,6 +31,18 @@ p, span {
   border: 1px solid #DBDBDB;
 }
 
+.profile-form {
+  width: 350px;
+  height: 390px;
+  display: flex;
+  margin: 75px, auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  background-color: #fff;
+  border: 1px solid #DBDBDB;
+}
+
 img.form-logo {
   align-self: center;
   width: 175px;
@@ -47,6 +59,24 @@ img.form-logo {
   border-radius: 3px;
   font-size: 14px;
 }
+
+.form-textarea {
+  width: 270px;
+  height: 80px;
+  resize: none;
+  margin: 3px auto;
+  padding: 10px 10px;
+  display: block;
+  background-color: #fafafa;
+  border: 1px solid #DBDBDB;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.form-textarea::placeholder {
+  font-size: 12px;
+}
+
 .form-input::placeholder {
   font-size: 12px;
   color: #8e8e8e;    
@@ -148,7 +178,6 @@ img.form-logo {
 }
 
 
-
 .form-password:hover {
   cursor: pointer;
 }
@@ -177,4 +206,23 @@ img.form-logo {
   text-align: center;
   background-color: #fff;
   border: 1px solid #DBDBDB;
+}
+
+.rotate {
+  transform: rotate(-90deg); 
+}
+
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.profile-container img{
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
 }

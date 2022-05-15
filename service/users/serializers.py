@@ -11,12 +11,17 @@ class UserSerializer(ModelSerializer):
             'pk',
             'email',
             'username',
+            'profile',
+            'description',
             'password',
             'updated',
         )
         extra_kwargs = {
             'password': {
                 'write_only': True
+            },
+            'profile': {
+                'read_only': True
             }
         }
     

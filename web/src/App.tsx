@@ -6,11 +6,15 @@ import axios from 'axios';
 // Styles
 import './App.css';
 
+// Components
+import Header from './components/header/Header';
+
 // Pages
 import NotFound from './pages/not-found/NotFound';
 import Signup from './pages/signup/Signup';
 import Password from './pages/password/Password';
 import Signin from './pages/signin/Signin';
+import User from './pages/user/User';
 import Profile from './pages/profile/Profile';
 import Main from './pages/main/Main';
 import FeedDetail from './pages/feed-detail/FeedDetail';
@@ -23,19 +27,24 @@ function App() {
   axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Main/>} />
-        <Route path="/signup" element={<Signup/>} />
-        <Route path="/password" element={<Password/>} />
-        <Route path="/signin" element={<Signin/>} />
-        <Route path="/profile" element={<Profile/>} />
-        <Route path="/feeds/*" element={<Main/>} />
-        <Route path="/feeds/:id" element={<FeedDetail />} />
-        <Route path="/lab" element={<Laboratroy/>} />
-        <Route path="*" element={<NotFound/>} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+       <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main/>} />
+          <Route path="/signup" element={<Signup/>} />
+          <Route path="/password" element={<Password/>} />
+          <Route path="/signin" element={<Signin/>} />
+          <Route path="/user" element={<User/>} />
+          <Route path="/profile" element={<Profile/>} />
+          <Route path="/feeds/*" element={<Main/>} />
+          <Route path="/feeds/:id" element={<FeedDetail />} />
+          <Route path="/lab" element={<Laboratroy/>} />
+          <Route path="*" element={<NotFound/>} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+    
   );
 }
 

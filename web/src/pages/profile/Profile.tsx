@@ -1,8 +1,17 @@
+// React modules
 import React from 'react';
+
+// Components
+import ProfileForm from '../../components/profile-form/ProfileForm';
+
+// Styles
+import '../../App.css';
 
 function Profile() {
   return (
-    <div>Profile</div>
+    <div className="center">
+      <ProfileForm />
+    </div>
   );
 }
 

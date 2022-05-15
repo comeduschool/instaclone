@@ -30,9 +30,11 @@ class User(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
-    email = models.EmailField(max_length=256, unique=True)
-    username = models.CharField(max_length=128, unique=True)
-    password = models.CharField(max_length=128)
+    email = models.EmailField(max_length=255, unique=True)
+    username = models.CharField(max_length=127, unique=True)
+    password = models.CharField(max_length=127)
+    profile = models.ImageField(upload_to="profiles", default="profile.png", null=False)
+    description = models.CharField(max_length=511, blank=True)
     authcode = models.CharField(max_length=17, blank=True, default="")
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

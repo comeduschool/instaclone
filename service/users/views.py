@@ -6,7 +6,8 @@ from django.contrib.auth import login
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.authentication import SessionAuthentication
 
 # models
 from users.models import User
@@ -15,10 +16,10 @@ from users.models import User
 from users.serializers import UserSerializer
 
 # Create your views here.
-class UserViewSet(ModelViewSet):
-    queryset = User.objects.all()
+class AuthViewSet(ModelViewSet):
     serializer_class = UserSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [ AllowAny ]
+    authentication_classes = []
 
     def signup(self, request):
         serializer = self.get_serializer(data=request.data)
@@ -162,4 +163,30 @@ class UserViewSet(ModelViewSet):
 
         return Response (
                 status=status.HTTP_200_OK
+            )
+class UserViewSet(ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [ IsAuthenticated, ]
+
+    def check_user_password(self, request, pk):
+        password = request.data.get("password", None)
+        if password is None:
+            return Response (
+                {
+                    "message": "올바른 비밀번호 형식이 아닙니다. 비밀번호를 확인해주세요."
+                },
+                status=status.HTTP_400_BAD_REQUEST
+            ) 
+        if request.user.check_password(password):
+            return Response (
+                {},
+                status=status.HTTP_200_OK
+            )
+        else: 
+            return Response (
+                {
+                    "message": "올바른 비밀번호 형식이 아닙니다. 비밀번호를 확인해주세요."
+                },
+                status=status.HTTP_404_NOT_FOUND
             )
