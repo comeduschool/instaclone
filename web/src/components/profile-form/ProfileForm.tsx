@@ -85,7 +85,7 @@ let ProfileForm = ()=>{
             <div className="form-content-subtitle">
               비밀번호를 다시한번 입력해주세요.
             </div>
-            <input className="form-input" type="password" placeholder="비밀번호" onChange={(e)=>onChangePassword(e)} {...register("password", passwordOpts)} />
+            <input className="form-input" type="password" placeholder="비밀번호" {...register("password", {...passwordOpts, onChange: onChangePassword})} />
             <button className="form-btn form-btn-blue" type="button" onClick={handlePassword}>확인</button>
           </div>
         }
