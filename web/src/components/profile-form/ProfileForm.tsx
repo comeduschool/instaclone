@@ -16,7 +16,7 @@ import { UserService } from '../../services/UserService';
 
 // import 
 import '../../App.css';
-let ProfileForm = ()=>{
+const ProfileForm = ()=>{
     const passwordOpts: RegisterOptions = {
       minLength: 6
     };

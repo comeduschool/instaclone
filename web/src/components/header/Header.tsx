@@ -1,5 +1,5 @@
 // React modules
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 
@@ -12,7 +12,7 @@ import logo from '../../logo2.png';
 
 const Header = ()=>{
   const nav = useNavigate();
-  const [cookies, setCookie, removeCookie] = useCookies();
+  const [cookies] = useCookies();
   // document.cookie = 'sessionid=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 
   const handleLogout = () => {

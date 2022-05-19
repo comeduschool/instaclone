@@ -9,7 +9,7 @@ import axios from 'axios';
 // import 
 import '../../App.css';
 
-let PassswordForm = ()=>{
+const PassswordForm = ()=>{
     const emailOpts: RegisterOptions = {
       required: true,
       pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/

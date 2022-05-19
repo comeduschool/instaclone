@@ -1,6 +1,10 @@
 import React from 'react';
 
+// Components
+import FeedList from '../../components/feed-list/FeedList';
+
 import '../../App.css';
+import '../../components/feed-list/FeedDetail.css';
 
 function Laboratroy() {
   return (
@@ -61,6 +65,9 @@ function Laboratroy() {
             bookmark_border
           </i>
         </div>
+      </div>
+      <div className="feed-container">
+        <FeedList />
       </div>
     </div>
     
