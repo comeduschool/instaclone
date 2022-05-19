@@ -27,6 +27,11 @@ user_password = UserViewSet.as_view({
     'post': 'check_user_password'
 })
 
+user_profile = UserViewSet.as_view({
+    'patch': 'upload_profile',
+    'delete': 'remove_profile',
+})
+
 urlpatterns = [
     # path("pk"),
     # path(),
@@ -35,5 +40,6 @@ urlpatterns = [
     path('authcode', authcode),
     path('password', password),
     path('<int:pk>', user_detail),
-    path('<int:pk>/password', user_password)
+    path('<int:pk>/password', user_password),
+    path('<int:pk>/profile', user_profile)
 ]

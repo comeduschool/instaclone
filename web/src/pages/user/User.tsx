@@ -1,5 +1,5 @@
 // React modules
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router';
 import { useCookies } from 'react-cookie';
@@ -19,7 +19,7 @@ function Profile() {
   const [cookies] = useCookies();
 
   const dispatch = useDispatch();
-  const { user, error } = useSelector((state: {user: UserState})=> state.user);
+  const { user } = useSelector((state: {user: UserState})=> state.user);
   
   const nav = useNavigate();
   
@@ -28,7 +28,7 @@ function Profile() {
       nav('/signin', {replace: true});
     } else {
       let userId = localStorage.getItem("userId");
-      dispatch<any>(UserService.retrieve(+userId));
+      dispatch<any>(UserService.retrieve(userId));
     }
   }, []);
 

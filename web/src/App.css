@@ -33,7 +33,7 @@ p, span {
 
 .profile-form {
   width: 350px;
-  height: 390px;
+  height: 450px;
   display: flex;
   margin: 75px, auto;
   flex-direction: column;

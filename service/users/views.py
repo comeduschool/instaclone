@@ -1,6 +1,7 @@
 # django modules
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
+from django.core.files.storage import default_storage
 
 # drf modules 
 from rest_framework import status
@@ -190,3 +191,36 @@ class UserViewSet(ModelViewSet):
                 },
                 status=status.HTTP_404_NOT_FOUND
             )
+
+    def upload_profile(self, request, pk):
+        profile = request.FILES.get("profile", None)
+        if profile is None:
+            raise Response(
+                {
+                    "message": "파일이 없습니다. 파일을 업로드해주세요."
+                },
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        try:
+            user = request.user.upload_profile(profile)
+
+        except Exception as e:
+            return Response(
+                {
+                  "message": str(e)  
+                },
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        return Response(
+            self.get_serializer(user).data,
+            status=status.HTTP_200_OK
+        )
+
+    def remove_profile(self, request, pk):
+        user = request.user.remove_profile()
+        return Response(
+            self.get_serializer(user).data,
+            status=status.HTTP_200_OK
+        )

@@ -33,7 +33,10 @@ class User(AbstractUser):
     email = models.EmailField(max_length=255, unique=True)
     username = models.CharField(max_length=127, unique=True)
     password = models.CharField(max_length=127)
-    profile = models.ImageField(upload_to="profiles", default="profile.png", null=False)
+    profile = models.ImageField(upload_to='profiles/%Y/%m/%d', 
+                                default="", 
+                                null=False, 
+                                blank=True)
     description = models.CharField(max_length=511, blank=True)
     authcode = models.CharField(max_length=17, blank=True, default="")
     created = models.DateTimeField(auto_now_add=True)
@@ -92,3 +95,16 @@ class User(AbstractUser):
         self.authcode = ""
         self.set_password(password)
         self.save() 
+
+
+    def upload_profile(self, file):
+        if 'image' not in file.content_type:
+            raise ValueError("ValueError: 이미지파일이 아닙니다. 이미지 파일을 업로드해주세요.")
+        ext = file.content_type.split("/")[-1]
+        self.profile.save(f"profile-{self.pk}-{int(time.time())}.{ext}", file.file) 
+        return self
+
+    def remove_profile(self):
+        self.profile = ""
+        self.save()
+        return self

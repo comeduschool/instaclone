@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { PayloadAction } from '@reduxjs/toolkit';
-import { AxiosError } from 'axios';
 import { UserService } from '../services/UserService';
 
 export interface User{
