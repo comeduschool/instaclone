@@ -1,20 +1,23 @@
 // React modules
 import React, { useState, useEffect, useRef } from 'react';
 
+// External modules
 import { useDispatch, useSelector } from "react-redux";
 import { useForm, RegisterOptions } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import { useCookies } from 'react-cookie';
 import axios from 'axios';
 
-// Model
+// Models
 import { UserState } from '../../models/user';
+
+// Actions
 import { UpdateUser } from '../../models/user';
 
 // Service
 import { UserService } from '../../services/UserService';
 
-// import 
+// Styles 
 import '../../App.css';
 const ProfileForm = ()=>{
     const passwordOpts: RegisterOptions = {
@@ -26,9 +29,9 @@ const ProfileForm = ()=>{
     const { register, getValues, formState: { errors } } = useForm({ mode: 'onChange' });
     const [cookies] = useCookies();
     
+    const { user } = useSelector((state: { user: UserState })=> state.user);
     const dispatch = useDispatch();
-    const { user } = useSelector((state: {user: UserState})=> state.user);
-    
+
     const nav = useNavigate();
 
     useEffect(()=>{

@@ -66,9 +66,7 @@ function Laboratroy() {
           </i>
         </div>
       </div>
-      <div className="feed-container">
-        <FeedList />
-      </div>
+      <FeedList />
     </div>
     
   );

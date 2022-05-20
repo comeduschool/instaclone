@@ -14,11 +14,11 @@ import './FeedDetail.css';
 const FeedList = () => {
   return (
     <div className="feeds">
-      <FeedDetail />
-      <FeedDetail />
-      <FeedDetail />
-      <FeedDetail />
-      <FeedDetail />
+      <FeedDetail feedId={1}/>
+      <FeedDetail feedId={2}/>
+      <FeedDetail feedId={3}/>
+      <FeedDetail feedId={4}/>
+      <FeedDetail feedId={5}/>
     </div>
   );
 }

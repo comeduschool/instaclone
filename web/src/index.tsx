@@ -9,11 +9,13 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import UserReducer from './models/user';
+import FeedReducer from './models/feed';
 import thunkMiddleware from 'redux-thunk'
 
 const store = configureStore({
   reducer: {
-    user: UserReducer
+    user: UserReducer,
+    feed: FeedReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunkMiddleware),
   devTools: true

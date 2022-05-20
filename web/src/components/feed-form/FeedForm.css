@@ -1,0 +1,94 @@
+.modal-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+}
+
+.modal-show {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-hide {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.modal {
+    background: white;
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 800px;
+    height: 600px;
+    position: relative;
+}
+
+.modal-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+    width: 800px;
+    font-size: 20px;
+    border-bottom: 1px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border-bottom: solid 1px rgb(202, 202, 202); */
+}
+
+.modal-title-side{
+    flex: 0 0 40px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.file-input {
+    width: 750px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: auto;
+    margin: auto;
+    font-size: 24px;
+}
+
+.file-input-default {
+    background-color: white;
+}
+
+.file-input-drag {
+    background-color: gray;
+}
+
+.file-btn {
+    width: 120px;
+    height: 30px;
+    margin: 20px auto;
+    border: solid 1px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background-color: #0095f6;
+}
+
+.file-icon {
+    font-size: 60px;
+    margin: 20px auto;
+}

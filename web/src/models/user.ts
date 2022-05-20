@@ -36,12 +36,12 @@ export const UserSlice = createSlice({
   name: "user",
   initialState: InitUserState,
   reducers: {
-    UpdateUser: (state: UserState, { payload }: PayloadAction<User>)=> {
+    UpdateUser: (state: UserState, { payload }: PayloadAction<User>) => {
       state.user = {...payload}
     },
   },
   extraReducers: {
-    [UserService.retrieve.pending.type]: (state, { payload }: PayloadAction<User>) =>{
+    [UserService.retrieve.pending.type]: (state, { payload }: PayloadAction<User>) => {
       state.loading = true;
       state.user = InitUser;
       state.error = null;

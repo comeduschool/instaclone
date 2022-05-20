@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from "react-router";
 
 // Assets
@@ -8,7 +8,11 @@ import Pic2 from './2.jpg';
 import Pic3 from './3.jpg';
 import './FeedDetail.css';
 
-function FeedDetail({ userID: Number }) {
+function FeedDetail({ feedId }) {
+  useEffect(()=>{
+    console.log(feedId);
+  }, []);
+
   return (
     <div className="feed">
       <div className="info">
@@ -35,7 +39,7 @@ function FeedDetail({ userID: Number }) {
       <div className="comment-wrapper">
         <i className="icon material-symbols-outlined">sentiment_satisfied</i>
         <input type="text" className="comment-box" placeholder="Add a comment" />
-        <button className="comment-btn">post</button>
+        <button className="comment-btn">게시</button>
       </div>
     </div>
   );
