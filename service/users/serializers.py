@@ -1,10 +1,10 @@
 from rest_framework.serializers import ModelSerializer
-from rest_framework.serializers import CharField
+from rest_framework import serializers
 
 from users.models import User
 
 class UserSerializer(ModelSerializer):
-    username = CharField(required=False)
+    username = serializers.CharField(required=False)
     class Meta:
         model = User
         fields = (

@@ -1,14 +1,12 @@
 # django modules
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
-from django.core.files.storage import default_storage
 
 # drf modules 
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework.authentication import SessionAuthentication
 
 # models
 from users.models import User

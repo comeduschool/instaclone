@@ -22,7 +22,7 @@ function Main() {
   })
 
   return (
-    <div>
+    <div className="feed-container">
       <FeedList />
       {/* <div className="modal-container" onScroll={(e)=>e.stopPropagation()} onWheel={(e)=>e.stopPropagation()}> */}
       <FeedForm />

@@ -1,6 +1,6 @@
 // React modules
 import React, { useState, useEffect, useRef } from 'react';
-
+import axios from 'axios';
 // Components
 import FeedDetail from './FeedDetail';
 
@@ -12,6 +12,18 @@ import Pic3 from './3.jpg';
 import './FeedDetail.css';
 
 const FeedList = () => {
+  const [page, setPage] = useState(1);
+  
+  useEffect(()=>{
+    axios.get('/feeds?page=5')
+      .then((resp)=>{
+        console.log(resp.data);
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }, []);
+
   return (
     <div className="feeds">
       <FeedDetail feedId={1}/>

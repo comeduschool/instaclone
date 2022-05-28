@@ -33,8 +33,7 @@ class User(AbstractUser):
     email = models.EmailField(max_length=255, unique=True)
     username = models.CharField(max_length=127, unique=True)
     password = models.CharField(max_length=127)
-    profile = models.ImageField(upload_to='profiles/%Y/%m/%d', 
-                                default="", 
+    profile = models.ImageField(default="", 
                                 null=False, 
                                 blank=True)
     description = models.CharField(max_length=511, blank=True)
@@ -52,7 +51,10 @@ class User(AbstractUser):
         return f"({self.pk}) {self.email}"
 
     def __repr__(self):
-        return f"<User pk={self.pk} {self.email} {self.username} {self.created}>"
+        return f"<User {self.pk} {self.email} {self.username} {self.created}>"
+
+    def __unicode__(self):
+        return self.username
 
     def _create_authcode(self):
         timestamp = int(time.time())

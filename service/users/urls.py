@@ -1,6 +1,5 @@
 # Django modules
 from django.urls import path
-from django.views.decorators.csrf import csrf_exempt
 
 # viewsets
 from .views import (
@@ -35,11 +34,11 @@ user_profile = UserViewSet.as_view({
 urlpatterns = [
     # path("pk"),
     # path(),
-    path('signup', signup),
-    path('signin', signin),
-    path('authcode', authcode),
-    path('password', password),
-    path('<int:pk>', user_detail),
-    path('<int:pk>/password', user_password),
-    path('<int:pk>/profile', user_profile)
+    path('/signup', signup),
+    path('/signin', signin),
+    path('/authcode', authcode),
+    path('/password', password),
+    path('/<int:pk>', user_detail),
+    path('/<int:pk>/password', user_password),
+    path('/<int:pk>/profile', user_profile)
 ]

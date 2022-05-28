@@ -1,15 +1,17 @@
 import React from 'react';
 
 // Components
-import FeedList from '../../components/feed-list/FeedList';
-
 import '../../App.css';
 import '../../components/feed-list/FeedDetail.css';
 
+
+// Styles
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 function Laboratroy() {
   return (
-    <div>
-      dd
+    <div className="slider-container-files">
       <div style={{margin: "120px"}}>Laboratroy
         <div>
           <i className="medium material-icons">
@@ -66,7 +68,9 @@ function Laboratroy() {
           </i>
         </div>
       </div>
-      <FeedList />
+      <div>
+
+      </div>
     </div>
     
   );

@@ -1,0 +1,109 @@
+
+.modal1 {
+    background: white;
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 600px;
+    height: 600px;
+    position: relative;
+}
+
+.modal2 {
+    
+}
+
+.modal-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+    width: 100%;
+    font-size: 20px;
+    border-bottom: 1px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border-bottom: solid 1px rgb(202, 202, 202); */
+}
+
+.modal-title-side{
+    flex: 0 0 40px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.file-input {
+    width: 95%;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: auto;
+    margin: auto;
+    font-size: 24px;
+}
+
+.file-input-default {
+    background-color: white;
+}
+
+.file-input-drag {
+    background-color: gray;
+}
+
+.file-btn {
+    width: 120px;
+    height: 30px;
+    margin: 20px auto;
+    border: solid 1px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background-color: #0095f6;
+}
+
+.file-icon {
+    font-size: 60px;
+    margin: 20px auto;
+}
+
+.slider-container {
+    width: 640px;
+    height: 400px;
+}
+
+.slider {
+    position: relative;
+}
+
+.slick-prev {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    z-index: 3;
+}
+
+.slick-next {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    z-index: 3;
+}
+
+.slick-dots {
+    bottom: 5px;
+}
+
+.slider-item {
+    width: 640px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center center;
+}
